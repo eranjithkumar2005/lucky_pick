@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+<h1>Random Pick</h1>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name=name1 placeholder="Name1"><br><br>
+    <input type="text" name=name2 placeholder="Name1"><br><br>
+    <input type="text" name=name3 placeholder="Name1"><br><br>
+    <input type="text" name=name4 placeholder="Name1"><br><br>
+    <input type="text" name=name5 placeholder="Name1"><br><br>
+    <button type="submit">Pick Random Name</button>
+</form>
+<h1 class="result">{{result}}</h1>
