@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
 <h1>Random Pick</h1>
 <h2>Ranjithkumar.E</h2>
@@ -11,4 +11,33 @@
     <input type="text" name=name5 placeholder="Name 5"><br><br>
     <button type="submit">Pick Random Name</button>
 </form>
-<h1 class="result">{{result}}</h1>
+<h1 class="result">{{result}}</h1> {% endcomment %}
+
+
+{% load static %}
+<DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>Random Pick</h1>
+    <h2>Ranjithkumar.E</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name1" placeholder="Name 1"><br><br>
+        <input type="text" name="name2" placeholder="Name 2"><br><br>
+        <input type="text" name="name3" placeholder="Name 3"><br><br>
+        <input type="text" name="name4" placeholder="Name 4"><br><br>
+        <input type="text" name="name5" placeholder="Name 5"><br><br>
+
+        <button type="submit">Pick Random Name</button>
+    </form>
+
+    <h1 class="result">{{ result }}</h1>
+</div>
+</body>
+</html>
